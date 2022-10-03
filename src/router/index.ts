@@ -19,13 +19,21 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/contact',
     name: 'contact',
+    // alias is like redirect but u can do it inside
+    alias: '/contact-us',
     component: () => import('../views/ContactView.vue')
   },
   {
     path: '/allList',
     name: 'allList',
     component: AllListPage
-  }
+  },
+  {
+    // if about-us is in url, redirect to about
+    path: '/about-us',
+    name: 'about-us',
+    redirect: '/about'
+  },
 ]
 
 const router = createRouter({

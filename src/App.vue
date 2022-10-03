@@ -3,7 +3,13 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/contact">Contact</router-link> |
-    <router-link to="/allList">All List</router-link>
+
+    <!-- use the allList with path from router -->
+    <!-- <router-link to="/allList">All List(Path)</router-link> | -->
+
+    <!-- use the allList with name from router -->
+    <router-link :to="{name:'allList'}">All List(Name)</router-link>
+
   </nav>
   <router-view/>
 </template>
