@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/about',
+    path: '/about/',
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/contact',
+    path: '/contact/:name/:age',
     name: 'contact',
     // alias is like redirect but u can do it inside
     alias: '/contact-us',
