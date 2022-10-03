@@ -34,6 +34,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'about-us',
     redirect: '/about'
   },
+  {
+    // if the page(url) doesn't exit, go HomeVue
+    path: '/:pathMatch(.*)*',
+    component: ()=> import('../views/404_Page.vue')
+  }
 ]
 
 const router = createRouter({
