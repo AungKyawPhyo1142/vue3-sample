@@ -1,6 +1,10 @@
 <template>
-    <sg-list></sg-list>
-    <about></about>
+    <div class="">
+        <div class="">
+            <sg-list :titleText="Title" :paraText="200"></sg-list>
+            <about></about>
+        </div>
+    </div>
 </template>
 
 <script>
