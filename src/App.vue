@@ -8,7 +8,9 @@
     <!-- <router-link to="/allList">All List(Path)</router-link> | -->
 
     <!-- use the allList with name from router -->
-    <router-link :to="{name:'allList'}">All List(Name)</router-link>
+    <router-link :to="{name:'allList'}">All List(Name)</router-link> |
+    <router-link to="/homePage">Home</router-link> |
+    <router-link to="/loginPage">Login</router-link>
 
   </nav>
   <router-view/>

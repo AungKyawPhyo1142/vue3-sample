@@ -17,6 +17,26 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
+    path: '/homePage',
+    name: 'homePage',
+    component: ()=> import('../views/HomePage.vue'),
+    // middleware guard
+    // before Entering this page (to,from,next)
+    // to => where do u want to go
+    // from => where did u come from
+    // next() -> let u do something if u come from defined page
+    beforeEnter: (to,from,next)=>{
+      // if u come from loginPage url, u can go to HomePage
+      // else, go loginPage
+      if(from.name == 'loginPage'){
+        next();
+      }
+      else {
+        next('loginPage');
+      }
+    }
+  },
+  {
     path: '/contact/:name/:age',
     name: 'contact',
     // alias is like redirect but u can do it inside
@@ -33,6 +53,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/about-us',
     name: 'about-us',
     redirect: '/about'
+  },
+  {
+    path: '/loginPage',
+    name: '/loginPage',
+    component: import('../views/LoginPage.vue')
   },
   {
     // if the page(url) doesn't exit, go HomeVue
