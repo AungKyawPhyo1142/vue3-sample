@@ -28,7 +28,7 @@ const routes: Array<RouteRecordRaw> = [
     beforeEnter: (to,from,next)=>{
       // if u come from loginPage url, u can go to HomePage
       // else, go loginPage
-      if(from.name == 'loginPage'){
+      if(localStorage.getItem('vueAuth')=='true'){
         next();
       }
       else {
